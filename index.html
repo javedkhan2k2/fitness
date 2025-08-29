@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <!-- Material Icons für UI-Elemente -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="queries.css">
+    <title>FitTech Solutions</title>
+</head>
+
+<body>
+    <!-- Kopfbereich mit Logo und Navigation -->
+    <header class="header" role="banner">
+        <h1 class="logo"><span>Fit</span>Tech <span>Sol</span>utions</h1>
+        <div class="nav-container" id="main-nav">
+            <nav role="navigation" aria-label="Main navigation">
+                <ul id="main-nav1" class="main-nav">
+                    <li><a class="main-nav-link active-link" href="#dashboard">Dashboard</a></li>
+                    <li class="sub">
+                        <!-- Untermenü für Training Log -->
+                        <a class="main-nav-link sub-menu-link" href="#">Training Log <span
+                                class="material-icons">arrow_drop_down</span></a>
+                        <ul id="sub-menu" class="submenu">
+                            <li><a class="main-nav-link" href="#training-log">Logs</a></li>
+                            <li><a class="main-nav-link" href="#add-log">Submit New Log</a></li>
+                            <li><a class="main-nav-link" href="#">Rate</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="main-nav-link" href="#statistics">Statistics</a></li>
+                    <li><a class="main-nav-link" href="#community">Community</a></li>
+                    <li><a class="main-nav-link" href="#profile">Profile</a></li>
+                    <!-- Schließen-Button für Mobile -->
+                    <a class="main-nav-link close-link" href="#">
+                        <span class="material-icons">close</span>
+                    </a>
+                </ul>
+
+            </nav>
+            <div class="header-right">
+                <!-- Suchformular -->
+                <form class="search-form" action="/search" method="post">
+                    <input type="text" name="search" id="search" placeholder="Search..." required>
+                    <button type="submit"><span class="material-icons">search</span></button>
+                </form>
+
+                <!-- Theme-Umschalter -->
+                <button id="theme-toggle" aria-label="Toggle light/dark theme">🌙</button>
+            </div>
+
+        </div>
+        <!-- Mobile Menü-Button -->
+        <a class="mobile-menu-link" href="#main-nav"><span class="material-icons">menu</span></a>
+    </header>
+    <main>
+        <!-- Dashboard Bereich -->
+        <section id="dashboard" class="section-dashboard">
+            <div class="container ">
+                <div class="dashboard-text-box">
+                    <h2 class="heading-primary icon-title">
+                        <span class="material-icons icon-fire">local_fire_department</span>
+                        Track your daily activity
+                    </h2>
+                    <!-- Dashboard Karten -->
+                    <div class="dashboard-cards">
+                        <!-- Morgenroutine Karte -->
+                        <div class="card card-morning">
+                            <div class="card-morning-title icon-title">
+                                <span class="morning-icon material-icons">cloud</span>
+                                Morning Walk
+                            </div>
+                            <div class="card-morning-text">
+                                <div class="mini-grid">
+                                    <span class="icon-steps icon material-icons">directions_run</span>
+                                    <p class="text">Running</p>
+                                    <p class="value">130 Col</p>
+                                </div>
+                                <div class="mini-grid">
+                                    <span class="icon-steps icon material-icons">timer</span>
+                                    <p class="text">Duration</p>
+                                    <p class="value">31:12h</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Herzfrequenz Karte -->
+                        <div class="card card-reading">
+                            <p class="reading-title">Heart</p>
+                            <div class="reading-data">
+                                <div class="reading-data-box">
+                                    <p class="reading-text">Today</p>
+                                    <p class="reading-value">110 Bp</p>
+                                </div>
+                                <div class="reading-data-box">
+                                    <p class="reading-text">Yesterday</p>
+                                    <p class="reading-value">130 Bp</p>
+                                </div>
+                            </div>
+                            <span class="icon-health reading-icon material-icons">
+                                monitor_heart
+                            </span>
+                        </div>
+                        <!-- Wasser Karte -->
+                        <div class="card card-reading">
+                            <p class="reading-title">Water</p>
+                            <div class="reading-data">
+                                <div class="reading-data-box">
+                                    <p class="reading-text">Consumed</p>
+                                    <p class="reading-value">6.0 L</p>
+                                </div>
+                                <div class="reading-data-box">
+                                    <p class="reading-text">Remaining</p>
+                                    <p class="reading-value">5.0 L</p>
+                                </div>
+                            </div>
+                            <span class="icon-progress reading-icon material-icons">
+                                local_drink
+                            </span>
+                        </div>
+                        <!-- Kolorien Karte -->
+                        <div class="card card-reading">
+                            <p class="reading-title">Colories</p>
+                            <div class="reading-data">
+                                <div class="reading-data-box">
+                                    <p class="reading-text">Consumed</p>
+                                    <p class="reading-value">130 Col</p>
+                                </div>
+                                <div class="reading-data-box">
+                                    <p class="reading-text">Remaining</p>
+                                    <p class="reading-value">60 Col</p>
+                                </div>
+                            </div>
+                            <span class="icon-progress reading-icon material-icons">
+                                speed
+                            </span>
+                        </div>
+                        <!-- Nährstoffe Karte -->
+                        <div class="card-nutritions">
+                            <div class="card nutrition">
+                                <div>
+                                    <p class="text">Protein</p>
+                                    <p class="value">130 Col</p>
+                                    <p class="unit">9.0 Kcl</p>
+                                </div>
+                                <span class="icon-calories icon material-icons">egg</span>
+                            </div>
+                            <div class="card nutrition">
+                                <div>
+                                    <p class="text">Cerbs</p>
+                                    <p class="value">120 Col</p>
+                                    <p class="unit">8.5 Kcl</p>
+                                </div>
+                                <span class="icon-calories icon material-icons">yard</span>
+
+                            </div>
+                            <div class="card nutrition">
+                                <div>
+                                    <p class="text">Fats</p>
+                                    <p class="value">150 Col</p>
+                                    <p class="unit">9.5 Kcl</p>
+                                </div>
+                                <span class="icon-calories icon material-icons">local_pizza</span>
+                            </div>
+                            <div class="card nutrition">
+                                <div>
+                                    <p class="text">Water</p>
+                                    <p class="value">0 Col</p>
+                                    <p class="unit">0 Kcl</p>
+                                </div>
+
+                                <span class="icon-progress icon material-icons">water</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="training-log" class="section-training-log">
+            <div class="container">
+                <h2 class="heading-secondary">Training Log</h2>
+                <div class="table-container">
+                    <table class="log-table">
+                        <thead>
+                            <tr>
+                                <th>Workout Type</th>
+                                <th>Duration (mins)</th>
+                                <th>Intensity</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Cardio (Running)</td>
+                                <td>30</td>
+                                <td>High</td>
+                                <td>Outdoor run, moderate pace</td>
+                            </tr>
+                            <tr>
+                                <td>Strength (Upper Body)</td>
+                                <td>45</td>
+                                <td>Medium</td>
+                                <td>Focus on chest and triceps</td>
+                            </tr>
+                            <tr>
+                                <td>Yoga</td>
+                                <td>60</td>
+                                <td>Low</td>
+                                <td>Vinyasa flow, morning session</td>
+                            </tr>
+                            <tr>
+                                <td>HIIT</td>
+                                <td>20</td>
+                                <td>High</td>
+                                <td>Bodyweight circuit, no equipment</td>
+                            </tr>
+                            <tr>
+                                <td>Cycling</td>
+                                <td>40</td>
+                                <td>Medium</td>
+                                <td>Stationary bike, interval training</td>
+                            </tr>
+                            <tr>
+                                <td>Pilates</td>
+                                <td>50</td>
+                                <td>Low</td>
+                                <td>Core-focused mat session</td>
+                            </tr>
+                            <tr>
+                                <td>Strength (Lower Body)</td>
+                                <td>45</td>
+                                <td>High</td>
+                                <td>Squats, lunges, deadlifts</td>
+                            </tr>
+                            <tr>
+                                <td>Swimming</td>
+                                <td>30</td>
+                                <td>Medium</td>
+                                <td>Freestyle laps, steady pace</td>
+                            </tr>
+                            <tr>
+                                <td>Stretching</td>
+                                <td>15</td>
+                                <td>Low</td>
+                                <td>Post-workout recovery</td>
+                            </tr>
+                            <tr>
+                                <td>Functional Training</td>
+                                <td>35</td>
+                                <td>Medium</td>
+                                <td>Balance and mobility drills</td>
+                            </tr>
+                            <tr>
+                                <td>Dance Fitness</td>
+                                <td>60</td>
+                                <td>High</td>
+                                <td>Zumba class</td>
+                            </tr>
+                            <tr>
+                                <td>Strength (Full Body)</td>
+                                <td>50</td>
+                                <td>High</td>
+                                <td>Compound lifts and circuits</td>
+                            </tr>
+                            <tr>
+                                <td>Walking</td>
+                                <td>30</td>
+                                <td>Low</td>
+                                <td>Park walk, light pace</td>
+                            </tr>
+                            <tr>
+                                <td>Boxing</td>
+                                <td>45</td>
+                                <td>High</td>
+                                <td>Heavy bag and footwork drills</td>
+                            </tr>
+                            <tr>
+                                <td>Rowing</td>
+                                <td>25</td>
+                                <td>Medium</td>
+                                <td>Indoor rower, intervals</td>
+                            </tr>
+                            <tr>
+                                <td>Mobility Work</td>
+                                <td>20</td>
+                                <td>Low</td>
+                                <td>Foam rolling and joint prep</td>
+                            </tr>
+                            <tr>
+                                <td>Stair Climbing</td>
+                                <td>30</td>
+                                <td>High</td>
+                                <td>Intervals with rest breaks</td>
+                            </tr>
+                            <tr>
+                                <td>Core Training</td>
+                                <td>20</td>
+                                <td>Medium</td>
+                                <td>Planks, crunches, leg raises</td>
+                            </tr>
+                            <tr>
+                                <td>Martial Arts</td>
+                                <td>60</td>
+                                <td>High</td>
+                                <td>Kickboxing drills</td>
+                            </tr>
+                            <tr>
+                                <td>Recovery Session</td>
+                                <td>30</td>
+                                <td>Low</td>
+                                <td>Stretching and breathing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="add-log" class="add-log">
+                    <p class="heading-tertiary">Record your training session</p>
+                    <form action="/post" method="post" class="form form--log">
+                        <div class="form-group">
+                            <label for="workout_type">Workout Type</label>
+                            <select name="workout_type" id="workout_type" required>
+                                <option value="">Please Select a Workout Type</option>
+                                <option value="running">Running</option>
+                                <option value="cycling">Cycling</option>
+                                <option value="weightlifting">Weightlifting</option>
+                                <option value="push-ups">Push Ups</option>
+                                <option value="Yoga">Yoga</option>
+                                <option value="pilates">Pilates</option>
+                                <option value="burpees">Burpees</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Duration</label>
+                            <input type="number" name="duration" id="duration" required>
+                        </div>
+
+                        <div class="notes form-group">
+                            <label for="notes">Notes</label>
+                            <textarea name="notes" id="notes" cols="30" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="intensity">Intensity</label>
+                            <input type="number" name="intensity" id="intensity" required>
+                        </div>
+
+                        <div class="btn form-group">
+                            <button class="form-submit" type="submit">Add training session</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="statistics" class="section-statistics">
+            <div class="container">
+                <h2 class="heading-secondary">Your fitness goals:</h2>
+                <p class="community-text">Get inspired by workouts, achievements, and healthy lifestyles shared by our
+                    FitTech community.</p>
+            </div>
+            <div class="container goals">
+                <div class="card goal">
+                    <div class="progress" style="--val: 90">
+                        <svg viewBox="0 0 120 120" aria-hidden="true">
+                            <circle class="bg" cx="60" cy="60" r="52"></circle>
+                            <circle class="bar" cx="60" cy="60" r="52"></circle>
+                        </svg>
+                        <span>90%</span>
+                    </div>
+                    <p class="goal-text">Daily Calories Burned – <strong>90%</strong> Complete</p>
+                </div>
+                <div class="card goal">
+                    <div class="progress" style="--val: 72; --bar: #007bff">
+                        <svg viewBox="0 0 120 120" aria-hidden="true">
+                            <circle class="bg" cx="60" cy="60" r="52"></circle>
+                            <circle class="bar" cx="60" cy="60" r="52"></circle>
+                        </svg>
+                        <span>72%</span>
+                    </div>
+                    <p class="goal-text">Weekly Calories Burned – <strong>72%</strong> of Goal</p>
+                </div>
+                <div class="card goal">
+                    <div class="progress" style="--val: 57; --bar: #ff6b35">
+                        <svg viewBox="0 0 120 120" aria-hidden="true">
+                            <circle class="bg" cx="60" cy="60" r="52"></circle>
+                            <circle class="bar" cx="60" cy="60" r="52"></circle>
+                        </svg>
+                        <span>57%</span>
+                    </div>
+                    <p class="goal-text">7-Day Challenge – <strong>4/7</strong> Completed</p>
+                </div>
+            </div>
+            <div class="container">
+                <a class="show-modal" href="#modal-training">View Detailed Trainings</a>
+            </div>
+            <div id="modal-training" class="modal-training" role="dialog" aria-labelledby="trainingModalTitle"
+                aria-describedby="trainingModalDesc" aria-modal="true">
+                <a class="modal-close-btn" href="#statistics"><span class="material-icons">close</span></a>
+                <div class="modal-container">
+                    <div class="card training-info">
+                        <div class="training-title"><strong>Workout:</strong> Full Body Strength Training</div>
+                        <div class="training-info-duration"><strong>Date:</strong> August 25, 2025 –
+                            <strong>Duration:</strong>
+                            45 min
+                        </div>
+                    </div>
+                    <div class="card training-results">
+                        <div class="training-title">Achievements</div>
+                        <ul class="training-list">
+                            <li>🔥 Calories Burned: 520 kcal</li>
+                            <li>🏋️ Exercises Completed: 12</li>
+                            <li>⏱ Duration: 45 min</li>
+                            <li>💓 Avg Heart Rate: 132 bpm</li>
+                        </ul>
+                    </div>
+
+                    <div class="card training-exercises">
+                        <div class="training-title">Exercises Breakdown</div>
+                        <div class="table-container">
+                            <table class="log-table">
+                                <thead>
+                                    <tr>
+                                        <th>Exercise</th>
+                                        <th>Sets x Reps</th>
+                                        <th>Duration</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Jump Squats</td>
+                                        <td>3 x 15</td>
+                                        <td>40 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Push-ups</td>
+                                        <td>3 x 12</td>
+                                        <td>30 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mountain Climbers</td>
+                                        <td>3 x 20</td>
+                                        <td>45 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Burpees</td>
+                                        <td>3 x 10</td>
+                                        <td>30 sec</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Plank</td>
+                                        <td>–</td>
+                                        <td>60 sec</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card container goals">
+                        <div class="goal">
+                            <div class="progress" style="--val: 90">
+                                <svg viewBox="0 0 120 120" aria-hidden="true">
+                                    <circle class="bg" cx="60" cy="60" r="52"></circle>
+                                    <circle class="bar" cx="60" cy="60" r="52"></circle>
+                                </svg>
+                                <span>90%</span>
+                            </div>
+                            <p class="goal-text">Daily Calories Burned – <strong>90%</strong> Complete</p>
+                        </div>
+                        <div class="goal">
+                            <div class="progress" style="--val: 72; --bar: #007bff">
+                                <svg viewBox="0 0 120 120" aria-hidden="true">
+                                    <circle class="bg" cx="60" cy="60" r="52"></circle>
+                                    <circle class="bar" cx="60" cy="60" r="52"></circle>
+                                </svg>
+                                <span>72%</span>
+                            </div>
+                            <p class="goal-text">Weekly Calories Burned – <strong>72%</strong> of Goal</p>
+                        </div>
+                        <div class="goal">
+                            <div class="progress" style="--val: 57; --bar: #ff6b35">
+                                <svg viewBox="0 0 120 120" aria-hidden="true">
+                                    <circle class="bg" cx="60" cy="60" r="52"></circle>
+                                    <circle class="bar" cx="60" cy="60" r="52"></circle>
+                                </svg>
+                                <span>57%</span>
+                            </div>
+                            <p class="goal-text">7-Day Challenge – <strong>4/7</strong> Completed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="accordions" class="accordion-container margin-top-m">
+                <h2 class="heading-secondary">Workout Program</h2>
+
+                <div class="accordions">
+
+                    <div class="accordion" id="strength" role="region" aria-labelledby="strength-title">
+                        <div class="accordion-title">
+                            <a href="#strength" aria-expanded="false" aria-controls="strength-body">
+                                <p>Strength Training</p>
+                                <span class="expand-arrow material-icons">expand_more</span>
+                            </a>
+                        </div>
+                        <div class="accordion-body">
+                            <div class="accordion-body-content">
+                                <p><strong>Goal:</strong> Build muscle & improve endurance</p>
+                                <p><strong>Duration:</strong> 45–60 min</p>
+                                <div>
+                                    <ul class="accordion-list">
+                                        <li class="accordion-list-item">
+                                            <input type="checkbox" id="squats">
+                                            <label for="squats">Squats – 4×12</label>
+                                        </li>
+                                        <li class="accordion-list-item">
+                                            <input type="checkbox" id="bench">
+                                            <label for="bench">Bench Press – 4×10</label>
+                                        </li>
+                                        <li class="accordion-list-item">
+                                            <input type="checkbox" id="deadlift">
+                                            <label for="deadlift">Deadlift – 3×8</label>
+                                        </li>
+                                        <li class="accordion-list-item">
+                                            <input type="checkbox" id="shoulder">
+                                            <label for="shoulder">Shoulder Press – 3×12</label>
+                                        </li>
+                                        <li class="accordion-list-item">
+                                            <input type="checkbox" id="plank">
+                                            <label for="plank">Plank Hold – 3×1 min</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a href="#accordions" class="close-accordion">Close</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion" id="cardio" role="region" aria-labelledby="cardio-title">
+                        <div class="accordion-title">
+                            <a href="#cardio" aria-expanded="false" aria-controls="cardio-body">
+                                <p>Cardio & Conditioning</p>
+                                <span class="expand-arrow material-icons">expand_more</span>
+                            </a>
+                        </div>
+                        <div class="accordion-body">
+                            <div class="accordion-body-content">
+                                <p><strong>Goal:</strong> Improve stamina & burn calories</p>
+                                <p><strong>Duration:</strong> 30–40 min</p>
+                                <div>
+                                    <ul class="accordion-list">
+                                        <li class="accordion-list-item">
+                                            <input type="checkbox" id="jacks">
+                                            <label for="jacks">Jumping Jacks – 3×50</label>
+                                        </li>
+                                        <li class="accordion-list-item">
+                                            <input type="checkbox" id="knees">
+                                            <label for="knees">High Knees – 3×45 sec</label>
+                                        </li>
+                                        <li class="accordion-list-item">
+                                            <input type="checkbox" id="sprint">
+                                            <label for="sprint">Sprint Intervals – 10×100m</label>
+                                        </li>
+                                        <li class="accordion-list-item">
+                                            <input type="checkbox" id="burpees">
+                                            <label for="burpees">Burpees – 3×15</label>
+                                        </li>
+                                        <li class="accordion-list-item">
+                                            <input type="checkbox" id="cycling">
+                                            <label for="cycling">Cycling/Rowing – 15 min steady pace</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a href="#accordions" class="close-accordion">Close</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion" id="flexibility" role="region" aria-labelledby="flexibility-title">
+                        <div class="accordion-title">
+                            <a href="#flexibility" aria-expanded="false" aria-controls="flexibility-body">
+                                <p>Flexibility & Mobility</p>
+                                <span class="expand-arrow material-icons">expand_more</span>
+                            </a>
+                        </div>
+                        <div class="accordion-body">
+                            <div class="accordion-body-content">
+                                <p><strong>Goal:</strong>Increase range of motion & reduce injury risk</p>
+                                <p><strong>Duration:</strong> 20–30 min</p>
+                                <div>
+                                    <ul class="accordion-list">
+                                        <li class="accordion-list-item">
+                                            <input type="checkbox" id="fold_stretch">
+                                            <label for="fold_stretch">Forward Fold Stretch – 3×30 sec</label>
+                                        </li>
+                                        <li class="accordion-list-item">
+                                            <input type="checkbox" id="cat-cow">
+                                            <label for="cat-cow">Cat-Cow – 3×10</label>
+                                        </li>
+                                        <li class="accordion-list-item">
+                                            <input type="checkbox" id="hip_flexor">
+                                            <label for="hip_flexor">Hip Flexor Stretch – 2×45 sec each side</label>
+                                        </li>
+                                        <li class="accordion-list-item">
+                                            <input type="checkbox" id="shoulder_circles">
+                                            <label for="shoulder_circles">Shoulder Circles – 3×15</label>
+                                        </li>
+                                        <li class="accordion-list-item">
+                                            <input type="checkbox" id="yoga_flow">
+                                            <label for="yoga_flow">Yoga Flow (Sun Salutation) – 10 min</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a href="#accordions" class="close-accordion">Close</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="community" class="section-community">
+            <div class="container">
+                <h2 class="heading-secondary">Community Gallery</h2>
+                <p class="community-text">Get inspired by workouts, achievements, and healthy lifestyles shared by our
+                    FitTech community.</p>
+            </div>
+            <div class="container gallery">
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1611672585731-fa10603fb9e0?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Workout image" class="gallery-img" loading="lazy">
+                    <div class="overlay">
+                        <h3>@andy</h3>
+                        <p>Morning fitness • 45 min</p>
+                    </div>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1483721310020-03333e577078?q=80&w=2728&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Workout image" class="gallery-img" loading="lazy">
+                    <div class="overlay">
+                        <h3>@adam</h3>
+                        <p>Morning jogging • 30 min</p>
+                    </div>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?q=80&w=2225&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Workout image" class="gallery-img" loading="lazy">
+                    <div class="overlay">
+                        <h3>@jack</h3>
+                        <p>Evening lifting • 60 min</p>
+                    </div>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Workout image" class="gallery-img" loading="lazy">
+                    <div class="overlay">
+                        <h3>@kevin</h3>
+                        <p>Evening fitness • 30 min</p>
+                    </div>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1518644961665-ed172691aaa1?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Workout image" class="gallery-img" loading="lazy">
+                    <div class="overlay">
+                        <h3>@julia & @persia</h3>
+                        <p>Morning workout • 60 min</p>
+                    </div>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?q=80&w=2582&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Workout image" class="gallery-img" loading="lazy">
+                    <div class="overlay">
+                        <h3>@eva</h3>
+                        <p>Morning fitness • 45 min</p>
+                    </div>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1470468969717-61d5d54fd036?q=80&w=1344&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Workout image" class="gallery-img" loading="lazy">
+                    <div class="overlay">
+                        <h3>@priya</h3>
+                        <p>Morning jumping • 30 min</p>
+                    </div>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?q=80&w=2226&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Workout image" class="gallery-img" loading="lazy">
+                    <div class="overlay">
+                        <h3>@scarlet</h3>
+                        <p>Morning yoga • 60 min</p>
+                    </div>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1662961154170-d2421e29f94b?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Workout image" class="gallery-img" loading="lazy">
+                    <div class="overlay">
+                        <h3>@yoav</h3>
+                        <p>Outdoor workout • 30 min</p>
+                    </div>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Workout image" class="gallery-img" loading="lazy">
+                    <div class="overlay">
+                        <h3>@eva1</h3>
+                        <p>Morning workout • 30 min</p>
+                    </div>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Workout image" class="gallery-img" loading="lazy">
+                    <div class="overlay">
+                        <h3>@eva1</h3>
+                        <p>Morning workout • 30 min</p>
+                    </div>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Workout image" class="gallery-img" loading="lazy">
+                    <div class="overlay">
+                        <h3>@eva1</h3>
+                        <p>Morning workout • 30 min</p>
+                    </div>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Workout image" class="gallery-img" loading="lazy">
+                    <div class="overlay">
+                        <h3>@john</h3>
+                        <p>Morning workout • 30 min</p>
+                    </div>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1599552683573-9dc48255fe85?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Workout image" class="gallery-img" loading="lazy">
+                    <div class="overlay">
+                        <h3>@julia</h3>
+                        <p>Morning workout • 30 min</p>
+                    </div>
+                </figure>
+
+            </div>
+        </section>
+
+        <section class="section-profile" id="profile">
+            <div class="container">
+                <h2 class="heading-primary">Profile</h2>
+            </div>
+            <div class="container">
+                <div class="profile">
+                    <div class="card profile-user">
+                        <figure>
+                            <div class="profile-img">
+                                <img src="img/ben.jpg" alt="user image">
+                                <a class="user-img-edit" href="#"><span class="material-icons">edit</span></a>
+                            </div>
+                        </figure>
+                        <p class="user-name">John Smith</p>
+                        <p class="user-address">
+                            <span class="material-icons">location_on</span>
+                            Leonberger Straße 1, 71642 Ludwigsburg
+                        </p>
+                        <div class="user-rating">
+                            <span class="material-icons">star</span>
+                            <p>5.0 (1)</p>
+                        </div>
+                        <div class="close-account">
+                            <a class="close-account-link" href="#">Close Account</a>
+                        </div>
+                    </div>
+                    <div class="card profile-data">
+                        <h3 class="profile-data-heading">Profile</h3>
+
+
+                        <form class="form user-profile" action="/updateprofile" method="post">
+                            <label class="profile-section">User Information</label>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" name="phone" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <button class="form-submit profile-btn" type="submit">Save Now</button>
+                            </div>
+                        </form>
+
+
+                        <form class="form user-credentials" action="/updatepassword" method="post">
+                            <label class="profile-section">Password</label>
+                            <div class="form-group">
+                                <label for="password">Current Password</label>
+                                <input type="password" name="password" id="password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="new_password">New Password</label>
+                                <input type="password" name="new_password" id="new_password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm_new_password">Confirm New Password</label>
+                                <input type="password" name="confirm_new_password" id="confirm_new_password" required>
+                            </div>
+                            <div class="form-group">
+                                <button class="form-submit profile-btn" type="submit">Update Password</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- Fußbereich -->
+    <footer class="footer">
+        <div class="logo-col">
+            <p class="footer-logo"><span>Fit</span>Tech <span>Sol</span>utions</p>
+            <ul class="social-links">
+                <li><a class="footer-link" href="#"><span class="material-icons">facebook</span></a></li>
+                <li><a class="footer-link" href="#"><span class="material-icons">alternate_email</span></a></li>
+                <li><a class="footer-link" href="#"><span class="material-icons">smart_display</span></a></li>
+            </ul>
+            <p class="copyright">Copyright &copy; 2025 by Fittech Solution, Inc. All rights reserved.</p>
+        </div>
+        <div class="address-col">
+            <p class="footer-heading">Contact us</p>
+            <address class="contacts">
+                <p class="address">
+                    Leonberger Straße 101, 71642 Ludwigsburg
+                </p>
+                <p>
+                    <a class="footer-link" href="tel:415-201-6370">415-201-6370</a><br>
+                    <a class="footer-link" href="mailto:hello@fittech.de">hello@fittech.de</a>
+                </p>
+
+            </address>
+        </div>
+        <nav class="nav-col">
+            <p class="footer-heading">Account</p>
+            <ul class="footer-nav">
+                <li><a class="footer-link" href="#">Create account</a></li>
+                <li><a class="footer-link" href="#">Sign in</a></li>
+                <li><a class="footer-link" href="#">iOS app</a></li>
+                <li><a class="footer-link" href="#">Android app</a></li>
+            </ul>
+        </nav>
+        <nav class="nav-col">
+            <p class="footer-heading">Compnay</p>
+            <ul class="footer-nav">
+                <li><a class="footer-link" href="#">About Fittech Solutions</a></li>
+                <li><a class="footer-link" href="#">For Business</a></li>
+                <li><a class="footer-link" href="#">Fitness partners</a></li>
+                <li><a class="footer-link" href="#">Careers</a></li>
+            </ul>
+        </nav>
+        <nav class="nav-col">
+            <p class="footer-heading">Resources</p>
+            <ul class="footer-nav">
+                <li><a class="footer-link" href="#">Workout directory</a></li>
+                <li><a class="footer-link" href="#">Help center</a></li>
+                <li><a class="footer-link" href="#">Privacy & terms</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="fitness.js"></script>
+</body>
+
+</html>
